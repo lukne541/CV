@@ -1,0 +1,167 @@
+\documentclass[a4paper,10pt]{article}
+% Compile with xelatex..
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontawesome} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb="[cmr10]" %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Lukas \textsc{Nee}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & Stockholm, Sweden  | 03 October 1997 \\
+    \textsc{Address:}   & Björnkärrsgatan 15C, 583 36, Linköping, Sverige \\
+    \textsc{Phone:}     & +46 72 3305845\\
+    \textsc{email:}     & \href{mailto:lukas@nees.se}{lukas@nees.se}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+ \emph{Current} & Part Time Junior Lab assistant at \textsc{Linköpings University}, Linköping \\\textsc{Augusti 2019}&
+          \emph{Course: Perspectives in Computer and Software Technology}\\&\footnotesize{Junior assitant for 8 project groups of 3, helping them with python code and project related matters.}\\\multicolumn{2}{c}{} \\
+ \textsc{Jun-Jul 2018} & Staff member at \textsc{FemtioFemPlus}, Stockholm \\&\emph{Household services at client's houses.}\\\multicolumn{2}{c}{} \\
+\textsc{Mars-Aug 2017} & Consultant at \textsc{Thalamus}, \emph{Assembler at FLIR Systems Täby}\\&\footnotesize{Worked with one coworker in the warehouse to FLIR Systems then biggest assembly line in Europe. 
+                                                                Responsibilities by selection include maintaining the assembly line with parts, ordering parts to maintain them in stock, book-keeping certain parts in the warehouse software (SAP), and keeping the warehouse tidy.}
+\end{tabular}
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{August} 2017-2022 & Master of Science in \textsc{Computer Science and Software Engineering} \\& \textbf{Linköping University}, Linköping\\
+& \textbf{Bachelor}(ongoing, ETA June-2020): ``Digital twin''. \\
+&\footnotesize Part of a student team which helps IMT, LIU develope the visualization of a digital twin. \\&\footnotesize The digital twin describes bodily functions such as heart, brain, liver, fat cells,\\&\footnotesize  using inteconnected mathematical models. \hyperlink{grds_liu}{\hfill| \footnotesize Detailed List of Courses} \\\\
+\textsc{August} 2013-2016& \textsc{Technology} 3 Years \\& \normalsize\textbf{Åva Gymnasium}, Stockholm\\
+&\normalsize \textsc{Grade}: 18.49\\&\\
+
+\end{tabular}
+
+%Section: Scholarships and additional info
+\section{Noteworthy Projects}
+\begin{tabular}{r|p{11cm}}
+  \textsc{Summer 2019} & \small Simple media HTTP webserver written in Go using REST naming convention,\\\textsc{Leisure} & \small with a sqlite3 database which is set up with Python and queried from Go. Frontend is regular JavaScript. \\\multicolumn{2}{c}{} \\
+  \textsc{Oct-Dec 2019} & \small Built a StarCraft 2 bot powered by artificial intelligence together with 4 other \\\textsc{School} & \small students. The project was written in Python. My responsibility was to make the bot take sound strategic decisions. This was achieved using Supervised-learning, Bayesian Networks, and data gathered from StarCraft 2 replays.\\\multicolumn{2}{c}{} \\
+ \end{tabular}
+
+
+%Section: Languages
+\section{Languages}
+\begin{tabular}{rl}
+ \textsc{Swedish:}&Mothertongue\\
+\textsc{English:}&Fluent\\
+\textsc{German:}&Basic Knowledge\\
+\end{tabular}
+
+\section{Computer Skills}
+\begin{tabular}{rl}
+ Basic Knowledge:& \textsc{C}/\textsc{C++}, \textsc{sqlite}, JavaScript, \textsc{Linux}, ubuntu, Java, Go, {\fb \LaTeX}\setmainfont[SmallCapsFont=Fontin-SmallCaps.otf]{Fontin.otf}\\
+Intermediate Knowledge:& Python \\
+\end{tabular}
+
+\section{Interests and Activities}
+Technology, Open-Source, Programming\\
+Travelling
+
+\newpage
+\par{\centering\Large \hypertarget{grds_liu}{Master of Science in \textsc{Computer Science and Software Engineering}}\par}\large{\centering Grades\par}\normalsize
+\begin{center}
+\begin{tabular}{lcc}
+\multicolumn{1}{c}{\textsc{Course}}&\textsc{Grade}&\textsc{Credits}\\ \hline
+Discrete Mathematics	&3&	6\\
+Professionalism for Engineers, part 1	&5&	1\\
+Functional and Imperative Programming	&4&	11\\
+Perspectives to Computer and Software Technology	&&	6\\
+Object Oriented Programming and Java && 3\\
+Project: Mobile and Social Applications	&4&	11\\
+Professionalism for Engineers, part 4	&5	&1\\
+Computer Hardware and Architecture Y	&4&	6\\
+Formal Languages and Automata Theory	&3&	6\\
+Linear Algebra	&3&	8\\
+Software Engineering Theory	&3&	4\\ \\
+		
+Professionalism for Engineers, part 3	&5&	1\\
+Data Structures, Algorithms and Programming Paradigms	&3&	11\\
+Introductory Course in Calculus	&5&	6\\
+Calculus in One Variable 1	&3&	6\\
+
+Concurrent Programming and Operating Systems	&3&	6\\
+Large-Scale Distributed Systems and Networks	&4&	8\\
+Probability and Statistics	&3&	6\\
+Artificial Intelligence &4& 6\\
+Artificial Intelligence - Project && 6\\
+
+
+\\
+		
+%Bachelor thesis	&	&15\\
+		
+    & Total&119\\\cline{2-3}
+\end{tabular}
+\end{center}
+\end{document}
